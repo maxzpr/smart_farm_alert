@@ -9,13 +9,10 @@ $events = $bot->parseEventRequest($body, $signature);
 foreach ($events as $event) {
     if ($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage) {
         $reply_token = $event->getReplyToken();
+        file_put_contents('user.json',$event->getReplyToken().":".$event->getUserId()."\n", FILE_WRITE);
+        $id = $bot->getProfile($event->getUserId())->getJSONDecodedBody();
         $text = $event->getText();
-        $bot->replyText($reply_token, $text);
+        $bot->replyText($reply_token,"u name : ".$id["displayName"]);
     }
 }
-ob_start();
-var_dump(json_decode($body,1));
-$raw = ob_get_clean();
-file_put_contents('user.json', $body."\n=====================================\n", FILE_APPEND);
-
 ?>
