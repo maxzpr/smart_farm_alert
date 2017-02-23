@@ -1,7 +1,10 @@
 {
     "autoload": {
         "psr-4": {
-            "LINE\\": "LINE/"
+            "LINE\\": "src/"
         }
+    },
+    "require": {
+        "linecorp/line-bot-sdk": "^1.5"
     }
 }
