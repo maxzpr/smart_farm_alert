@@ -1,5 +1,5 @@
 <?php
-include('/app/Weather.php');
+require __DIR__ ."/Weather.php";
 $w = new Weather;
 $data = $w->getWeather("Chiangmai,th");
 $weather = $data["item"]["forecast"];
