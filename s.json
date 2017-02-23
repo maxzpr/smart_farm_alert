@@ -1,0 +1,148 @@
+{
+    "query": {
+        "count": 1,
+        "created": "2017-02-22T16:27:57Z",
+        "lang": "th-TH",
+        "results": {
+            "channel": {
+                "units": {
+                    "distance": "mi",
+                    "pressure": "in",
+                    "speed": "mph",
+                    "temperature": "F"
+                },
+                "title": "Yahoo! Weather - Nome, AK, US",
+                "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2460286/",
+                "description": "Yahoo! Weather for Nome, AK, US",
+                "language": "en-us",
+                "lastBuildDate": "Wed, 22 Feb 2017 07:27 AM AKST",
+                "ttl": "60",
+                "location": {
+                    "city": "Nome",
+                    "country": "United States",
+                    "region": " AK"
+                },
+                "wind": {
+                    "chill": "-33",
+                    "direction": "23",
+                    "speed": "11"
+                },
+                "atmosphere": {
+                    "humidity": "71",
+                    "pressure": "1018.0",
+                    "rising": "0",
+                    "visibility": "16.1"
+                },
+                "astronomy": {
+                    "sunrise": "9:35 am",
+                    "sunset": "6:57 pm"
+                },
+                "image": {
+                    "title": "Yahoo! Weather",
+                    "width": "142",
+                    "height": "18",
+                    "link": "http://weather.yahoo.com",
+                    "url": "http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"
+                },
+                "item": {
+                    "title": "Conditions for Nome, AK, US at 06:00 AM AKST",
+                    "lat": "64.499474",
+                    "long": "-165.405792",
+                    "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2460286/",
+                    "pubDate": "Wed, 22 Feb 2017 06:00 AM AKST",
+                    "condition": {
+                        "code": "31",
+                        "date": "Wed, 22 Feb 2017 06:00 AM AKST",
+                        "temp": "-17",
+                        "text": "Clear"
+                    },
+                    "forecast": [{
+                            "code": "30",
+                            "date": "22 Feb 2017",
+                            "day": "Wed",
+                            "high": "4",
+                            "low": "-16",
+                            "text": "Partly Cloudy"
+                        },
+                        {
+                            "code": "15",
+                            "date": "23 Feb 2017",
+                            "day": "Thu",
+                            "high": "30",
+                            "low": "5",
+                            "text": "Blowing Snow"
+                        },
+                        {
+                            "code": "23",
+                            "date": "24 Feb 2017",
+                            "day": "Fri",
+                            "high": "30",
+                            "low": "27",
+                            "text": "Breezy"
+                        },
+                        {
+                            "code": "15",
+                            "date": "25 Feb 2017",
+                            "day": "Sat",
+                            "high": "33",
+                            "low": "28",
+                            "text": "Blowing Snow"
+                        },
+                        {
+                            "code": "23",
+                            "date": "26 Feb 2017",
+                            "day": "Sun",
+                            "high": "29",
+                            "low": "17",
+                            "text": "Breezy"
+                        },
+                        {
+                            "code": "32",
+                            "date": "27 Feb 2017",
+                            "day": "Mon",
+                            "high": "16",
+                            "low": "-7",
+                            "text": "Sunny"
+                        },
+                        {
+                            "code": "28",
+                            "date": "28 Feb 2017",
+                            "day": "Tue",
+                            "high": "12",
+                            "low": "-8",
+                            "text": "Mostly Cloudy"
+                        },
+                        {
+                            "code": "16",
+                            "date": "01 Mar 2017",
+                            "day": "Wed",
+                            "high": "21",
+                            "low": "10",
+                            "text": "Snow"
+                        },
+                        {
+                            "code": "28",
+                            "date": "02 Mar 2017",
+                            "day": "Thu",
+                            "high": "16",
+                            "low": "5",
+                            "text": "Mostly Cloudy"
+                        },
+                        {
+                            "code": "28",
+                            "date": "03 Mar 2017",
+                            "day": "Fri",
+                            "high": "18",
+                            "low": "-11",
+                            "text": "Mostly Cloudy"
+                        }
+                    ],
+                    "description": "<![CDATA[<img src=\"http://l.yimg.com/a/i/us/we/52/31.gif\"/>\n<BR />\n<b>Current Conditions:</b>\n<BR />Clear\n<BR />\n<BR />\n<b>Forecast:</b>\n<BR /> Wed - Partly Cloudy. High: 4Low: -16\n<BR /> Thu - Blowing Snow. High: 30Low: 5\n<BR /> Fri - Breezy. High: 30Low: 27\n<BR /> Sat - Blowing Snow. High: 33Low: 28\n<BR /> Sun - Breezy. High: 29Low: 17\n<BR />\n<BR />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2460286/\">Full Forecast at Yahoo! Weather</a>\n<BR />\n<BR />\n(provided by <a href=\"http://www.weather.com\" >The Weather Channel</a>)\n<BR />\n]]>",
+                    "guid": {
+                        "isPermaLink": "false"
+                    }
+                }
+            }
+        }
+    }
+}
