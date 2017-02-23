@@ -5,8 +5,5 @@ $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '75584d370097584887a2b1e843de141c']);
 $content = file_get_contents('php://input');
 $events = json_decode($content, true);
-$ReplyToken = LINE\LINEBot\Event\MessageEvent($events);
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
-$response = $bot->replyMessage($ReplyToken->getReplyToken(), $textMessageBuilder);
-echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+var_dump($events);
 ?>
