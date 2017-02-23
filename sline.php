@@ -3,9 +3,19 @@ require_once __DIR__ . '/vendor/autoload.php';
 $access_token = 'VPIFT2PSZgYu3m787JdL+UrikOJLempDam0gLNe2yBt5YmsA8Sz0tFjfr+jZx6Xivxk4NDqXmVFPhIARIjA43RES6H/Twv2AkRCzJ0BwlQMUNUJfmPHeFITKEHPGHXqE/J9ea2FfEXMmchv00nwfKAdB04t89/1O/w1cDnyilFU=';
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '75584d370097584887a2b1e843de141c']);
-$content = file_get_contents('php://input');
-$events = json_decode($content, true);
-$bEvent = \LINE\LINEBot\Event\BaseEvent($events);
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('You id : '.$bEvent->getUserId());
-$response = $bot->replyMessage($bEvent->getReplyToken(), $textMessageBuilder);
+$signature = $_SERVER["HTTP_".\LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
+$body = file_get_contents("php://input");
+$events = $bot->parseEventRequest($body, $signature);
+foreach ($events as $event) {
+    if ($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage) {
+        $reply_token = $event->getReplyToken();
+        $text = $event->getText();
+        $bot->replyText($reply_token, $text);
+    }
+}
+ob_start();
+var_dump(json_decode($body,1));
+$raw = ob_get_clean();
+file_put_contents('user.json', $body."\n=====================================\n", FILE_APPEND);
+
 ?>
