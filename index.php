@@ -1,5 +1,5 @@
 <?php
-require __DIR__ ."/Weather.php";
+require "weather.php";
 $w = new Weather;
 $data = $w->getWeather("Chiangmai,th");
 $weather = $data["item"]["forecast"];
