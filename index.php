@@ -1,5 +1,5 @@
 <?php
-require "weather.php";
+require "./weather.php";
 $w = new Weather;
 $data = $w->getWeather("Chiangmai,th");
 $weather = $data["item"]["forecast"];
@@ -10,7 +10,7 @@ $weather = $data["item"]["forecast"];
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <title>Smart Farm</title>
-        <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div class="page-header">
