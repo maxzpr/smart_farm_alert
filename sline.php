@@ -12,7 +12,8 @@ foreach ($events as $event) {
         $file = "user.json";
         $fr = file_get_contents($file);
         $arr = json_decode($fr, TRUE);
-        foreach($val as $arr)
+         $bot->replyText($reply_token,'break');
+       /* foreach($val as $arr)
         {
             if($val == $event->getUserId())
             {
@@ -24,7 +25,7 @@ foreach ($events as $event) {
                 file_put_contents('user.json',$event->getUserId()."\n", FILE_APPEND);
                 $bot->replyText($reply_token,'save');
             }
-        }
+        }*/
     }
 }
 ?>
