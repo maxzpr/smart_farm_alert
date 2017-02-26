@@ -9,8 +9,8 @@ $events = $bot->parseEventRequest($body, $signature);
 foreach ($events as $event) {
     if ($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage) {
         $reply_token = $event->getReplyToken();
-        $file = json_decode(file_get_contents("user.json"),true);
-             $check = false;
+        $file = file("user.json");
+        $check = false;
             if(count($file) > 0){
                  foreach($file as $key => $value){
                        if($value == $event->getUserId()){
