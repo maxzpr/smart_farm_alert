@@ -9,14 +9,19 @@ $events = $bot->parseEventRequest($body, $signature);
 foreach ($events as $event) {
     if ($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage) {
         $reply_token = $event->getReplyToken();
-        $file="user.json";
-        $fopen = fopen($file, "r");
-        $fread = fread($fopen,filesize("$file"));
-        file_put_contents('user.json',$event->getUserId()."\n", FILE_APPEND);
-        fclose($fopen);
-        $id = $bot->getProfile($event->getUserId())->getJSONDecodedBody();
-        $text = $event->getText();
-        $bot->replyText($reply_token,json_encode($events));
+        $file = file("user.json");
+        foreach ($lines as $file)
+        {
+            if($event->getUserId() == $lines)  
+            {
+                break;
+            }
+            else
+            {
+                file_put_contents('user.json',$event->getUserId()."\n", FILE_APPEND);
+            }
+        }
+        $bot->replyText($reply_token,'save');
     }
 }
 ?>
