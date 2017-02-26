@@ -1,5 +1,5 @@
 <?php
-    if(!empty($_POST["msg"])&& is_string ($_POST["msg"])){
+    if(!empty($_POST["msg"])){
     require_once __DIR__ . '/vendor/autoload.php';
     $msg = $_POST["msg"];
     
