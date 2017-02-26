@@ -20,8 +20,7 @@ foreach ($events as $event) {
                    }
               }
               if($check){
-                 $file.push($event->getUserId());
-                 file_put_contents('user.json',json_encode($file), FILE_APPEND);
+                 file_put_contents('user.json',$event->getUserId(), FILE_APPEND);
                  $bot->replyText($reply_token,'save');
               }else{
                  $bot->replyText($reply_token,'break'); 
