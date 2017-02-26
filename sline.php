@@ -10,7 +10,7 @@ foreach ($events as $event) {
     if ($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage) {
         $reply_token = $event->getReplyToken();
         $file = "user.json";
-         file_put_contents('user.json',"", FILE_WRITE);
+        file_put_contents($file,"...", FILE_WRITE);
        /* $fr = file_get_contents($file);
         $arr = json_decode($fr, TRUE);
         //$bot->replyText($reply_token,'break');
