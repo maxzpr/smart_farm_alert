@@ -7,7 +7,7 @@
         $w = new Weather;
         $data = $w->getWeather("Chiangmai,th");
         $weather = $data["item"]["forecast"];
-        $msg = $weather[0]["text"];
+        $msg = "Weather today is ".$weather[0]["text"];
     }
     $access_token = 'VPIFT2PSZgYu3m787JdL+UrikOJLempDam0gLNe2yBt5YmsA8Sz0tFjfr+jZx6Xivxk4NDqXmVFPhIARIjA43RES6H/Twv2AkRCzJ0BwlQMUNUJfmPHeFITKEHPGHXqE/J9ea2FfEXMmchv00nwfKAdB04t89/1O/w1cDnyilFU=';
     $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
