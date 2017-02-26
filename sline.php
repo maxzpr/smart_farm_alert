@@ -30,7 +30,7 @@ foreach ($events as $event) {
                 }
          }else{
              $bot->replyText($reply_token,'save new user');
-             file_put_contents('user.json',json_encode('{0:'.$event->getUserId().'}', TRUE), FILE_APPEND);
+             file_put_contents('user.json',json_encode($event->getUserId(), TRUE), FILE_APPEND);
          }
             
         /*foreach($val as $arr)
