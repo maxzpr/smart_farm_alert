@@ -9,20 +9,19 @@ $events = $bot->parseEventRequest($body, $signature);
 foreach ($events as $event) {
     if ($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage) {
         $reply_token = $event->getReplyToken();
-        $file = "user.json";
-        $file_handle = fopen($file, "r");
-        while (!feof($file_handle)) {
-            $read = fgets($file_handle);
-            if($read == $event->getUserId())
-            {
-                $bot->replyText($reply_token,'no save');
-               break;
-            }
-            else
-            {
-                file_put_contents('user.json',$event->getUserId()."\n", FILE_APPEND);
-                $bot->replyText($reply_token,'save');
-            }
+        $file = json_decode(file_get_contents("user.json"));
+        if($file.length > 0){
+           foreach($file as $key => $val){
+               if(is_array($val)) {
+                   if($val ==$event->getUserId()){
+                        $bot->replyText($reply_token,'break');
+                        break;
+                   }else{
+                        file_put_contents('user.json',$event->getUserId()."\n", FILE_APPEND);
+                        $bot->replyText($reply_token,'save');
+                   }
+               }
+           }
         }
         fclose($file_handle);
         /*foreach($val as $arr)
