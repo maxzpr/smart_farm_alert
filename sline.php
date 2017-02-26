@@ -11,7 +11,7 @@ foreach ($events as $event) {
         $reply_token = $event->getReplyToken();
         $file = "user.json";
         $fr = readfile($file);
-        $bot->replyText($reply_token,$fr);
+        $bot->replyText($reply_token,"eiei");
         /*foreach($val as $arr)
         {
             if($val == $event->getUserId())
