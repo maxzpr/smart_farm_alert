@@ -12,16 +12,18 @@ foreach ($events as $event) {
         $file = file("user.json");
         foreach ($lines as $file)
         {
+            $bot->replyText($reply_token,$lines);
             if($event->getUserId() == $lines)  
             {
+                $bot->replyText($reply_token,'break');
                 break;
             }
             else
             {
                 file_put_contents('user.json',$event->getUserId()."\n", FILE_APPEND);
+                $bot->replyText($reply_token,'save');
             }
         }
-        $bot->replyText($reply_token,'save');
     }
 }
 ?>
