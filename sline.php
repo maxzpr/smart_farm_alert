@@ -13,8 +13,8 @@ foreach ($events as $event) {
         $fr = file_get_contents($file);
         $arr = json_decode($fr, TRUE);
         if(count($arr) > 0){
-                 foreach($file as $key => $value){
-                       if($value == $event->getUserId()){
+                 foreach($file as $arr){
+                       if($file == $event->getUserId()){
                             break;
                        }
                        else{
