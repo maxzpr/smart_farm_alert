@@ -10,8 +10,7 @@ foreach ($events as $event) {
     if ($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage) {
         $reply_token = $event->getReplyToken();
         $file = json_decode(file_get_contents("user.json"),true);
-        if(is_array($file)){
-            $check = false;
+             $check = false;
              foreach($file as $key => $value){
                    if($value == $event->getUserId()){
                         break;
@@ -27,10 +26,6 @@ foreach ($events as $event) {
               }else{
                  $bot->replyText($reply_token,'break'); 
               }
-        }else{
-             file_put_contents('user.json',$event->getUserId()."\n", FILE_APPEND);
-             $bot->replyText($reply_token,'save');
-        }
         /*foreach($val as $arr)
         {
             if($val == $event->getUserId())
