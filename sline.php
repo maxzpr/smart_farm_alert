@@ -28,8 +28,7 @@ foreach ($events as $event) {
                  $bot->replyText($reply_token,'break'); 
               }
         }else{
-             $file.push($event->getUserId());
-             file_put_contents('user.json',json_encode($file), FILE_APPEND);
+             file_put_contents('user.json',$event->getUserId(), FILE_APPEND);
              $bot->replyText($reply_token,'save');
         }
         /*foreach($val as $arr)
