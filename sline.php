@@ -9,11 +9,12 @@ $events = $bot->parseEventRequest($body, $signature);
 foreach ($events as $event) {
     if ($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage) {
         $reply_token = $event->getReplyToken();
-        $file = file("user.json");
-        foreach ($lines as $file)
+        $file = "user.json";
+        $fr = file_get_contents($file);
+        $arr = json_decode($fr, TRUE);
+        foreach($val as $arr)
         {
-            $bot->replyText($reply_token,implode(",",$lines));
-            if($event->getUserId() == $lines)  
+            if($val == $event->getUserId())
             {
                 $bot->replyText($reply_token,'break');
                 break;
