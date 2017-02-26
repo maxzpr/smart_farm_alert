@@ -16,15 +16,15 @@
         $data = $w->getWeather("Chiangmai,th");
         $weather = $data["item"]["forecast"];
         $msg = $weather[0]["date"]."Weather today is ".$weather[0]["text"];
-        foreach($arr as $a){
-           $response = $bot->pushMessage($a,$msg);
+    }
+    $m = $msg;
+     foreach($arr as $a){
+           $response = $bot->pushMessage($a,$m);
         }
         if($response->getHTTPStatus() == '200'){
           echo '1';
         }else{
           echo '0';
         }
-    }
-    echo $msg;
   }
 ?>
