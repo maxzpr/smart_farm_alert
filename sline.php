@@ -9,10 +9,10 @@ $events = $bot->parseEventRequest($body, $signature);
 foreach ($events as $event) {
     if ($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage) {
         $reply_token = $event->getReplyToken();
-        $file =  json_decode(file('user.json', FILE_IGNORE_NEW_LINES));
-        $check = false;
-         file_put_contents('user.json',var_dump($file), FILE_APPEND);
-         /*   if(count($file) > 0){
+        $file = "user.json";
+        $fr = file_get_contents($file);
+        $arr = json_decode($fr, TRUE);
+        if(count($arr) > 0){
                  foreach($file as $key => $value){
                        if($value == $event->getUserId()){
                             break;
@@ -22,14 +22,16 @@ foreach ($events as $event) {
                        }
                   }
                 if($check){
-                    file_put_contents('user.json',$event->getUserId()."\n", FILE_APPEND);
+                    array_push($arr,$event->getUserId());
+                    file_put_contents('user.json',json_encode($arr), FILE_APPEND);
                     $bot->replyText($reply_token,'save');
                 }else{
                     $bot->replyText($reply_token,'break'); 
                 }
-            }else{
-                file_put_contents('user.json',$event->getUserId()."\n", FILE_APPEND);
-            }
+         }else{
+             $bot->replyText($reply_token,'save new user');
+             file_put_contents('user.json',json_encode({0:$event->getUserId()}), FILE_APPEND);
+         }
             
         /*foreach($val as $arr)
         {
