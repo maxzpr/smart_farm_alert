@@ -16,7 +16,7 @@ foreach ($events as $event) {
         if(count($arr) > 0){
                $check = false;
                foreach($arr as $a){
-                       if($a == $id){
+                       if(trim($a) == trim($id)){
                             break;
                        }
                        else{
