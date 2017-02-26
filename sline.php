@@ -23,14 +23,14 @@ foreach ($events as $event) {
                   }
                 if($check){
                     array_push($arr,$event->getUserId());
-                    file_put_contents('user.json',json_encode($arr), FILE_APPEND);
+                    file_put_contents('user.json',json_encode($arr, TRUE), FILE_APPEND);
                     $bot->replyText($reply_token,'save');
                 }else{
                     $bot->replyText($reply_token,'break'); 
                 }
          }else{
              $bot->replyText($reply_token,'save new user');
-             file_put_contents('user.json',json_encode({0:$event->getUserId()}), FILE_APPEND);
+             file_put_contents('user.json',json_encode('{0:'.$event->getUserId().'}', TRUE), FILE_APPEND);
          }
             
         /*foreach($val as $arr)
