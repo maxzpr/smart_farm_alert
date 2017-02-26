@@ -11,10 +11,18 @@ foreach ($events as $event) {
         $reply_token = $event->getReplyToken();
         $file = "user.json";
         while(!feof($file)) {
-            $read[] = fgets($file);
+            $read = fgets($file);
+            if($read == $event->getUserId())
+            {
+                break;
+            }
+            else
+            {
+                file_put_contents('user.json',$event->getUserId()."\n", FILE_APPEND);
+            }
         }
         fclose($file);
-        $bot->replyText($reply_token,$read);
+        
         /*foreach($val as $arr)
         {
             if($val == $event->getUserId())
