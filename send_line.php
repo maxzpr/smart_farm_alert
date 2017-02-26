@@ -17,6 +17,7 @@
         $weather = $data["item"]["forecast"];
         $msg = $weather[0]["date"]."Weather today is ".$weather[0]["text"];
     }
+    echo $msg;
     foreach($arr as $a){
        $response = $bot->pushMessage($a,$msg);
     }
