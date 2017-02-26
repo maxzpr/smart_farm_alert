@@ -16,11 +16,12 @@ foreach ($events as $event) {
         if(count($arr) > 0){
                $check = false;
                foreach($arr as $a){
-                       if(trim($a) == trim($id)){
-                            break;
+                       if(trim($a) != trim($id)){
+                            $check = true;
                        }
                        else{
-                            $check = true;
+                            $check = false;
+                            break;
                        }
                 }
                 if($check){
