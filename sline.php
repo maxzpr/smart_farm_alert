@@ -10,9 +10,11 @@ foreach ($events as $event) {
     if ($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage) {
         $reply_token = $event->getReplyToken();
         $file = "user.json";
-        $myfile = fopen("user.json", "w") or die("Unable to open file!");
-        $txt = "";
-        fwrite($myfile, $txt);
+        while(!feof($file)) {
+            $read[] = fgets($file);
+        }
+        fclose($file);
+        $bot->replyText($reply_token,$read);
         /*foreach($val as $arr)
         {
             if($val == $event->getUserId())
