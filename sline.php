@@ -11,7 +11,8 @@ foreach ($events as $event) {
         $reply_token = $event->getReplyToken();
         $file =  json_decode(file('user.json', FILE_IGNORE_NEW_LINES));
         $check = false;
-            if(count($file) > 0){
+         file_put_contents('user.json',var_dump($file), FILE_APPEND);
+         /*   if(count($file) > 0){
                  foreach($file as $key => $value){
                        if($value == $event->getUserId()){
                             break;
