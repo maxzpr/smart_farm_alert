@@ -27,6 +27,8 @@ foreach ($events as $event) {
               }else{
                  $bot->replyText($reply_token,'break'); 
               }
+        }else{
+            $bot->replyText($reply_token,'no arr'); 
         }
         /*foreach($val as $arr)
         {
