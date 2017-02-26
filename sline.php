@@ -14,8 +14,9 @@ foreach ($events as $event) {
         $fr = file_get_contents($file);
         $arr = json_decode($fr, TRUE);
         if(count($arr) > 0){
-               foreach($file as $arr){
-                       if($file === $id){
+               $check = false;
+               foreach($arr as $a){
+                       if($a === $id){
                             break;
                        }
                        else{
@@ -34,20 +35,6 @@ foreach ($events as $event) {
              $bot->replyText($reply_token,'save new user');
              file_put_contents('user.json',json_encode($arr, TRUE));
          }
-            
-        /*foreach($val as $arr)
-        {
-            if($val == $event->getUserId())
-            {
-                $bot->replyText($reply_token,'break');
-                break;
-            }
-            else
-            {
-                file_put_contents('user.json',$event->getUserId()."\n", FILE_APPEND);
-                $bot->replyText($reply_token,'save');
-            }
-        } */
     }
 }
 ?>
