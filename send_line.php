@@ -15,7 +15,7 @@
         $w = new Weather;
         $data = $w->getWeather("Chiangmai,th");
         $weather = $data["item"]["forecast"];
-        $msg = "Weather today is ".var_dump($weather);
+        $msg = $weather[0]["date"]."Weather today is ".$weather[0]["text"];
     }
     foreach($arr as $a){
        $response = $bot->pushMessage($a,$msg);
