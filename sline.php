@@ -11,20 +11,25 @@ foreach ($events as $event) {
         $reply_token = $event->getReplyToken();
         $file = json_decode(file_get_contents("user.json"),true);
              $check = false;
-             foreach($file as $key => $value){
-                   if($value == $event->getUserId()){
-                        break;
-                   }
-                   else{
-                        $check = true;
-                   }
-              }
-              if($check){
-                 file_put_contents('user.json',$event->getUserId(), FILE_APPEND);
-                 $bot->replyText($reply_token,'save');
-              }else{
-                 $bot->replyText($reply_token,'break'); 
-              }
+            if($file.length > 0){
+                 foreach($file as $key => $value){
+                       if($value == $event->getUserId()){
+                            break;
+                       }
+                       else{
+                            $check = true;
+                       }
+                  }
+                if($check){
+                    file_put_contents('user.json',$event->getUserId()."\n", FILE_APPEND);
+                    $bot->replyText($reply_token,'save');
+                }else{
+                    $bot->replyText($reply_token,'break'); 
+                }
+            }else{
+                file_put_contents('user.json',$event->getUserId()."\n", FILE_APPEND);
+            }
+            
         /*foreach($val as $arr)
         {
             if($val == $event->getUserId())
