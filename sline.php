@@ -12,7 +12,7 @@ foreach ($events as $event) {
         $file = file("user.json");
         foreach ($lines as $file)
         {
-            $bot->replyText($reply_token,$lines);
+            $bot->replyText($reply_token,implode(",",$lines));
             if($event->getUserId() == $lines)  
             {
                 $bot->replyText($reply_token,'break');
