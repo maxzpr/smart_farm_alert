@@ -9,10 +9,9 @@
         $weather = $data["item"]["forecast"];
         $msg = $weather[0]["date"]."Weather today is ".$weather[0]["text"];
     }
-    if($header=='m'&& $msg!=''){
+    if($header=='m'){
         $msg = $_POST['msg'];
     }
-        
     $access_token = 'VPIFT2PSZgYu3m787JdL+UrikOJLempDam0gLNe2yBt5YmsA8Sz0tFjfr+jZx6Xivxk4NDqXmVFPhIARIjA43RES6H/Twv2AkRCzJ0BwlQMUNUJfmPHeFITKEHPGHXqE/J9ea2FfEXMmchv00nwfKAdB04t89/1O/w1cDnyilFU=';
     $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
     $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '75584d370097584887a2b1e843de141c']);
