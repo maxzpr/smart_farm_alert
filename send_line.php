@@ -7,7 +7,8 @@
         $w = new Weather;
         $data = $w->getWeather("Chiangmai,th");
         $weather = $data["item"]["forecast"];
-        $msg = $weather[0]["date"]."Weather today is ".$weather[0]["text"];
+        //$msg = $weather[0]["date"]."Weather today is ".$weather[0]["text"];
+        $msg = var_dump($weather);
     }
     if($header=='m'){
         $msg = $_POST['msg'];
