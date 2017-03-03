@@ -8,8 +8,9 @@
         $data = $w->getWeather("Chiangmai,th");
         $weather = $data["item"]["forecast"];
         //$msg = $weather[0]["date"]."Weather today is ".$weather[0]["text"];
-        foreach($weather as $key=>$value){
-            $msg.=$key."".$value["date"]."Weather today is ".$value["text"];
+        $i = 1;
+        foreach($weather as $value){
+            $msg.="\n".$i++.$key.$value["date"]."Weather today is ".$value["text"];
         }
         //$msg = print_r($weather,true);
     }
