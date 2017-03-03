@@ -10,7 +10,7 @@
         //$msg = $weather[0]["date"]."Weather today is ".$weather[0]["text"];
         $i = 1;
         foreach($weather as $value){
-            $msg.="\n ".$i++."). Date".$key.$value["date"]." Weather today is ".$value["text"];
+            $msg.="\n ".$i++."). ".$key.$value["date"]." Weather today is ".$value["text"];
         }
         //$msg = print_r($weather,true);
     }
